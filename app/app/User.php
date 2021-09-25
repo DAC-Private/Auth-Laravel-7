@@ -15,8 +15,13 @@ class User extends Authenticatable
      *
      * @var array
      */
+    // rubah saja table dengan kata kunci 
+    // protected $table = 'nama table';
+protected $table = 'pegawai';
+
+// fillable disini setting saja sesuai fild yang ada,namun untuk field dengan nama : ['name','email','password'] tidak boleh di ganti,karna akan eror,cukup tambahkan saja bila ada field lain,tanpa mengganti field ketiga tadi
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password','kantor_id'
     ];
 
     /**
@@ -24,6 +29,8 @@ class User extends Authenticatable
      *
      * @var array
      */
+
+    //  Tetap di hidden,dan jangan dirubah
     protected $hidden = [
         'password', 'remember_token',
     ];
@@ -33,7 +40,18 @@ class User extends Authenticatable
      *
      * @var array
      */
+
+    // casts tetapkan saja
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    // untuk tambahkan relasi bisa tambahkan saja disini
+    // public function kantor()
+    // {
+    //     # code...
+    //     return $this->belongsTo(Kantor::class,'kantor_id');
+    // }
+
+    /* Kesimpulan,hanya mengganti nama table saja,dan field name,email,password pastikan tetap ada,kalau ingin berelasi boleh boleh saja,hehe */
 }
