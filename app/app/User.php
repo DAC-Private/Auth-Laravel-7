@@ -19,7 +19,7 @@ class User extends Authenticatable
     // protected $table = 'nama table';
 protected $table = 'pegawai';
 
-// fillable disini setting saja sesuai fild yang ada,namun untuk field dengan nama : ['name','email','password'] tidak boleh di ganti,karna akan eror,cukup tambahkan saja bila ada field lain,tanpa mengganti field ketiga tadi
+// fillable disini setting saja sesuai field yang ada,namun untuk field dengan nama : ['name','email','password'] tidak boleh di ganti,karna akan eror,cukup tambahkan saja bila ada field lain,tanpa mengganti field ketiga tadi
     protected $fillable = [
         'name', 'email', 'password','kantor_id'
     ];
